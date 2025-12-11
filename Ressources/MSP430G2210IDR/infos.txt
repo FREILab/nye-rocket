@@ -1,0 +1,21 @@
+Information on the MSP430G2210:
+
+Why you may like to use this MCU?
+---------------------------------
+Marc Ihle still has a lot of these devices (one roll with 1000 pieces).
+You may use them for free (no, not all at once ;-) for this project. However, if you prefer another MCU, go ahead.
+
+Debugger:
+---------
+We have 2 pieces of MSP-FET Flash Emulator Tools available.
+You can use it to program the MCU via SpiBiWire (a JTAG version with reduced pin count, as the MCU has only 8 pins).
+In addition, we have two programmer from the eval-kit eZ430-RF2500. They also work as SpiBiWire-interface for this MCU.
+Please contact Marc Ihle, if you use one of these debugger interfaces.
+
+Features:
+---------
+This MCU is very small in size, but with reasonable large SMD-pins, so that it may be soldered by hand.
+It has Schmitt-trigger Inputs as well as comparator inputs. These can be used to detect analog voltages.
+The threshold can be set to either  25% or 50% of the power supply voltage.
+The device consumes nearly no power in power-down mode and still few power during normal operation.
+Therefore, you can omit a power switch.
