@@ -5,12 +5,40 @@ Why you may like to use this MCU?
 Marc Ihle still has a lot of these devices (one roll with 1000 pieces).
 You may use them for free (no, not all at once ;-) for this project. However, if you prefer another MCU, go ahead.
 
+Caution: This is a low-voltage MSP. Do not apply voltages >3.6V. Use a voltage regulator if needed.
+
 Debugger:
 ---------
 We have 2 pieces of MSP-FET Flash Emulator Tools available.
 You can use it to program the MCU via SpiBiWire (a JTAG version with reduced pin count, as the MCU has only 8 pins).
 In addition, we have two programmer from the eval-kit eZ430-RF2500. They also work as SpiBiWire-interface for this MCU.
 Please contact Marc Ihle, if you use one of these debugger interfaces.
+
+Pin-Configuration of eZ430-RF2500 programmer:
+Pin 1: TX             
+Pin 2: 3.6V           
+Pin 3: TEST, SBWTCK   white
+Pin 4: /RST, SBWTDIO  blue/red
+Pin 5: GND            brown
+Pin 6: RX             
+
+How to connect these emulators to the pins to the MSP430G2210:
+Pin 1: DVCC = VCC     use the power from a battery (1.8V up to 3.6V)
+Pin 2: I/O
+Pin 3: I/O
+Pin 4: I/O
+Pin 5: I/O
+Pin 6: /RST, SBWTDIO  blue/red
+Pin 7: TEST, SBWTCK   white
+Pin 8: DVSS = GND     brown
+
+Pin-Configuration of MSP-FET Flash Emulator Tool:
+- See back of the emulator
+- See page 23 of https://www.ti.com/lit/ug/slau278y/slau278y.pdf for details on how
+  to connect this emulator. If you don't want to blow the JTAG-fuse of the device,
+  you may omit R2 and connect JTAG-Pin 7 (TCK) directly to Pin 7 (TEST) of the MSP,
+  without connecting JTAG-Pin 8 (TEST/VPP).
+
 
 Features:
 ---------
